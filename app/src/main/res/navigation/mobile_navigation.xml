@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_announcement">
+
+    <fragment
+        android:id="@+id/navigation_announcement"
+        android:name="com.example.codeexpdeez.Announcement"
+        android:label="Announcements"
+        tools:layout="@layout/activity_announcement" />
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.codeexpdeez.Schedule"
+        android:label="Schedule"
+        tools:layout="@layout/activity_schedule" />
+
+    <fragment
+        android:id="@+id/navigation_emart"
+        android:name="com.example.codeexpdeez.eMart"
+        android:label="eMart"
+        tools:layout="@layout/activity_emart" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.codeexpdeez.Profile"
+        android:label="Profile"
+        tools:layout="@layout/activity_profile"/>
+
+</navigation>
+

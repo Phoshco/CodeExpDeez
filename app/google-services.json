@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378539988607",
+    "firebase_url": "https://expcode-2022-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "expcode-2022",
+    "storage_bucket": "expcode-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378539988607:android:82a820b29d6418a5b9d14a",
+        "android_client_info": {
+          "package_name": "com.example.codeexpdeez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378539988607-e5vb46seo4lqqen84o08hk938iejrk3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.codeexpdeez",
+            "certificate_hash": "dd72251e0f0931c0193275d80ab6890f07ee0531"
+          }
+        },
+        {
+          "client_id": "378539988607-7guo5nf7kl2d5ad3dbp45p9vkhj8vhg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBL-3Bj6UbUNn-lJXD6EHXMYCCnbGerL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378539988607-7guo5nf7kl2d5ad3dbp45p9vkhj8vhg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
