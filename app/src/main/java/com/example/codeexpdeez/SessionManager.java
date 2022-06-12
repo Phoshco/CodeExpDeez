@@ -65,7 +65,7 @@ public class SessionManager {
     }
 
     /**
-     * Call this method anywhere in the project to Get the stored session data
+     * Call this method anywhere in the project to get the stored session data
      * */
     public HashMap<String, String> getUserDetails() {
 

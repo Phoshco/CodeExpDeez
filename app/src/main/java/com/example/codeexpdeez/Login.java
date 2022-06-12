@@ -66,10 +66,10 @@ public class Login extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             SessionManager session = new SessionManager(getApplicationContext());
                             String name = snapshot.child("info").child("name").getValue()+"";
-                            String rank = snapshot.child("info").child("name").getValue()+"";
-                            String privilege = snapshot.child("info").child("name").getValue()+"";
-                            String unit = snapshot.child("info").child("name").getValue()+"";
-                            String coy = snapshot.child("info").child("name").getValue()+"";
+                            String rank = snapshot.child("info").child("rank").getValue()+"";
+                            String privilege = snapshot.child("info").child("privilege").getValue()+"";
+                            String unit = snapshot.child("info").child("unit").getValue()+"";
+                            String coy = snapshot.child("info").child("coy").getValue()+"";
                             session.createLoginSession(uid, name, rank, privilege, unit, coy);
                         }
                         @Override

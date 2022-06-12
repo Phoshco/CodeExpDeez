@@ -24,6 +24,7 @@ public class Schedule extends Fragment {
     private View view;
     private RecyclerView mRecyclerView;
     private HashMap<String, String> user;
+    private Integer privilege;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -33,6 +34,7 @@ public class Schedule extends Fragment {
 
         SessionManager session = new SessionManager(getActivity());
         user = session.getUserDetails();
+        privilege = Integer.parseInt(user.get("Privilege").toString());
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.schedule_recycler);
         ScheduleFirebase fb = new ScheduleFirebase(user.get("Unit").toString(),user.get("Coy").toString());
@@ -45,6 +47,9 @@ public class Schedule extends Fragment {
                 new ScheduleRecyclerView().setConfig(mRecyclerView, view.getContext(), events, keys);
             }
         });
+
+        setHasOptionsMenu(true);
+
         return view;
     }
 
@@ -56,13 +61,15 @@ public class Schedule extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(Integer.parseInt(user.get("Privilege"))==0){
+        if(privilege==0){
             Toast.makeText(view.getContext(), "You do not have the required authority to add announcements", Toast.LENGTH_LONG).show();
             return false;
         }
-        if(id == R.id.item){
-            startActivity(new Intent(view.getContext(), AddScheduleEvent.class));
-            return true;
+        else {
+            if(id == R.id.item){
+                startActivity(new Intent(view.getContext(), AddScheduleEvent.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
