@@ -38,6 +38,26 @@ public class Launch extends AppCompatActivity {
 
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         if (user!=null){
+
+            String uid = FirebaseAuth.getInstance().getUid();
+            DatabaseReference root = FirebaseDatabase.getInstance("https://expcode-2022-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child(uid);
+
+            root.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    SessionManager session = new SessionManager(getApplicationContext());
+                    String name = snapshot.child("info").child("name").getValue()+"";
+                    String rank = snapshot.child("info").child("name").getValue()+"";
+                    String privilege = snapshot.child("info").child("name").getValue()+"";
+                    String unit = snapshot.child("info").child("name").getValue()+"";
+                    String coy = snapshot.child("info").child("name").getValue()+"";
+                    session.createLoginSession(uid, name, rank, privilege, unit, coy);
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+
             Intent i = new Intent(Launch.this,MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);

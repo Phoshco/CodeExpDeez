@@ -14,6 +14,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
@@ -52,6 +57,26 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(Login.this, "Logged In!",Toast.LENGTH_SHORT).show();
+
+                    String uid = FirebaseAuth.getInstance().getUid();
+                    DatabaseReference root = FirebaseDatabase.getInstance("https://expcode-2022-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child(uid);
+
+                    root.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            SessionManager session = new SessionManager(getApplicationContext());
+                            String name = snapshot.child("info").child("name").getValue()+"";
+                            String rank = snapshot.child("info").child("name").getValue()+"";
+                            String privilege = snapshot.child("info").child("name").getValue()+"";
+                            String unit = snapshot.child("info").child("name").getValue()+"";
+                            String coy = snapshot.child("info").child("name").getValue()+"";
+                            session.createLoginSession(uid, name, rank, privilege, unit, coy);
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+
                     Intent i = new Intent(Login.this, MainActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
