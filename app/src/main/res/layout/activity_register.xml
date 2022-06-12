@@ -29,34 +29,31 @@
         android:imeOptions="actionNext"
         android:layout_below="@+id/title1"/>
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter rank"
+        android:text="Rank"
         android:id="@+id/rank"
         android:layout_marginTop="20dp"
-        android:singleLine="true"
-        android:imeOptions="actionNext"
+        android:spinnerMode="dropdown"
         android:layout_below="@+id/name"/>
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter unit"
+        android:text="Unit"
         android:id="@+id/unit"
         android:layout_marginTop="20dp"
-        android:singleLine="true"
-        android:imeOptions="actionNext"
+        android:spinnerMode="dropdown"
         android:layout_below="@+id/rank"/>
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter coy"
+        android:text="Company"
         android:id="@+id/coy"
         android:layout_marginTop="20dp"
-        android:singleLine="true"
-        android:imeOptions="actionNext"
+        android:spinnerMode="dropdown"
         android:layout_below="@+id/unit"/>
 
     <EditText

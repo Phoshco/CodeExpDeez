@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:paddingTop="15dp"
-    android:paddingBottom="15dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
     tools:context=".Schedule">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -16,6 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="100dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
 </LinearLayout>

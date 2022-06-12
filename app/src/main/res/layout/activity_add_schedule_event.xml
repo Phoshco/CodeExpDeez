@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Enter announcement title"
+            android:hint="Enter event title"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:paddingTop="250dp"/>
@@ -39,16 +39,68 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_below="@id/title"
-            android:hint="Details"
+            android:hint="Enter event details"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:paddingTop="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:text="Add date of event"
+
+                android:layout_marginTop="20dp"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:text="Add time of event"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/showdate"
+                android:text="Date of event"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/showtime"
+                android:text="Time of event"/>
+
+
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/addEvent"
-            android:text="Add to company announcements"
+            android:text="Add event to company schedule"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>
