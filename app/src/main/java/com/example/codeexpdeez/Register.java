@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,13 +28,21 @@ public class Register extends AppCompatActivity {
 
     private EditText email;
     private EditText password;
-    private EditText rank;
+    private Spinner rank;
     private EditText name;
-    private EditText unit;
-    private EditText coy;
+    private Spinner unit;
+    private Spinner coy;
     private Button register;
 
     private FirebaseAuth auth;
+
+    String[] units = new String[]{"-- Choose Unit --","CDO", "1SIR", "2SIR", "3SIR", "5SIR", "6SIR", "8SIR", "9SIR", "1GDS", "3GDS", "40SAR", "41SAR", "42SAR", "48SAR", "20SA", "21SA", "23SA", "24SA", "30SCE", "35SCE", "36SCE", "38SCE", "39SCE", "1SIG", "6SIG", "9SIG", "MPEU"};
+    String[] coys = new String[]{"-- Choose Company --", "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"};
+    String[] ranks = new String[]{"-- Choose Rank --", "GEN", "LG","MG", "BG", "COL", "SLTC", "LTC", "MAJ", "CPT", "LTA", "2LT", "CWO", "SWO", "MWO", "1WO", "2WO", "3WO", "MSG", "SSG", "1SG", "2SG", "3SG", "CFC", "CPL", "LCP", "PFC", "PTE", "REC"};
+
+    String unitSel;
+    String coySel;
+    String rankSel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +58,46 @@ public class Register extends AppCompatActivity {
         unit = findViewById(R.id.unit);
         coy = findViewById(R.id.coy);
 
+
+        //For dropdown menu for Unit
+        ArrayAdapter<String> unitAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, units);
+        unit.setAdapter(unitAdapter);
+        unit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                unitSel = adapterView.getItemAtPosition(i).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        //For dropdown menu for Company
+        ArrayAdapter<String> coyAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, coys);
+        coy.setAdapter(coyAdapter);
+        coy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                coySel = adapterView.getItemAtPosition(i).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        //For dropdown menu for Rank
+        ArrayAdapter<String> rankAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, ranks);
+        rank.setAdapter(rankAdapter);
+        rank.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                rankSel = adapterView.getItemAtPosition(i).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
         auth = FirebaseAuth.getInstance();
 
         register.setOnClickListener(new View.OnClickListener(){
@@ -58,13 +109,18 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this,"Please enter email/password",Toast.LENGTH_SHORT).show();
                 } else if (txt_password.length()<6){
                     Toast.makeText(Register.this,"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
+                } else if (rankSel.equals("-- Choose Rank --")){
+                    Toast.makeText(Register.this,"Please choose rank",Toast.LENGTH_SHORT).show();
+                } else if (unitSel.equals("-- Choose Unit --")){
+                    Toast.makeText(Register.this,"Please choose Unit",Toast.LENGTH_SHORT).show();
+                } else if (coySel.equals("-- Choose Company --")){
+                    Toast.makeText(Register.this,"Please choose Company",Toast.LENGTH_SHORT).show();
                 } else {
                     registerUser(txt_email,txt_password);
                 }
             }
         }
         );
-
     }
 
     private void registerUser(String email, String password) {
@@ -75,9 +131,9 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this,"Registered!",Toast.LENGTH_SHORT).show();
                     User user = new User();
                     user.setName(name.getText().toString());
-                    user.setRank(rank.getText().toString());
-                    user.setUnit(unit.getText().toString());
-                    user.setCoy(coy.getText().toString());
+                    user.setRank(rankSel);
+                    user.setUnit(unitSel);
+                    user.setCoy(coySel);
                     /*startActivity(new Intent(Register.this, MainActivity.class));
                     finish();*/
                     loginUser(email, password, user);

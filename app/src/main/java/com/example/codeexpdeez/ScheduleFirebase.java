@@ -47,7 +47,8 @@ public class ScheduleFirebase {
                 List<String> keys = new ArrayList<>();
 
                 for(DataSnapshot keyNode: snapshot.getChildren()){
-                    keys.add(keyNode.getKey());
+                    //keys.add(keyNode.getKey());
+                    keys.add(keyNode.child("date").getValue().toString());
                     ScheduleEvent event = keyNode.getValue(ScheduleEvent.class);
                     events.add(event);
                 }
@@ -62,7 +63,7 @@ public class ScheduleFirebase {
     }
 
     public void updateSchedule(ScheduleEvent event, final DataStatus dataStatus){
-        String key = event.getTitle();
+        String key = event.getDate();
         /*String deets = event.getDetails();
         String date = event.getDate();
         mReferenceCart.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -80,6 +81,16 @@ public class ScheduleFirebase {
             }
         });*/
         mReferenceCart.child(key).setValue(event).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                dataStatus.DataInserted();
+            }
+        });
+    }
+
+    public void deleteSchedule(int i, final DataStatus dataStatus){
+        String temp = events.get(i).getDate();
+        mReferenceCart.child(temp).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 dataStatus.DataInserted();

@@ -19,6 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Launch extends AppCompatActivity {
 
@@ -77,8 +80,9 @@ public class Launch extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        mNodeRef.setValue(timestamp.toString());
+        //Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+        mNodeRef.setValue(sdf.format(new Date()));
 
 
         register = findViewById(R.id.register);
