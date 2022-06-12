@@ -11,6 +11,14 @@
     android:paddingBottom="5dp"
     tools:context=".Schedule">
 
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/remove"
+        android:text="Delete events (Tap on title)"
+        android:paddingBottom="5dp"
+        android:gravity="center" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/schedule_recycler"
         android:layout_width="match_parent"

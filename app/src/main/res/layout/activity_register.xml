@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:padding="15dp">
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/title1"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
         <!--android:src="@mipmap/app_icon_round"-->
 
     <EditText
@@ -27,7 +27,7 @@
         android:layout_marginTop="20dp"
         android:singleLine="true"
         android:imeOptions="actionNext"
-        android:layout_below="@+id/title1"/>
+        />
 
     <Spinner
         android:layout_width="match_parent"

@@ -128,6 +128,7 @@ public class AddScheduleEvent extends AppCompatActivity {
                             Toast.makeText(AddScheduleEvent.this, "The event has been added successfully into schedule", Toast.LENGTH_LONG).show();
                         }
                     });
+                    finish();
                 }
             }
         });

@@ -87,4 +87,14 @@ public class ScheduleFirebase {
             }
         });
     }
+
+    public void deleteSchedule(int i, final DataStatus dataStatus){
+        String temp = events.get(i).getDate();
+        mReferenceCart.child(temp).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                dataStatus.DataInserted();
+            }
+        });
+    }
 }
