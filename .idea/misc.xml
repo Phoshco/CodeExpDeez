@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/box_display.xml" value="0.2575" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.187" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_emart.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_schedule.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_view_emart_item.xml" value="0.22" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/event_items.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/search_result_box.xml" value="0.5616438356164384" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/person.xml" value="0.193" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_schedule_event.xml" value="0.25" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_announcement.xml" value="0.2625" />
@@ -19,11 +26,6 @@
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/menu/addmenu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2625" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/menu/menu.xml" value="0.2625" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/drawable/box_display.xml" value="0.255" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_emart.xml" value="0.15534420289855072" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_schedule.xml" value="0.223731884057971" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_view_emart_item.xml" value="0.2" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/search_result_box.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>
