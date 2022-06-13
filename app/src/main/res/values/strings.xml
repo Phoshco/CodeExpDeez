@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CodeExpDeez</string>
+    <string name="query_hint">Enter item to search</string>
+    <string name="credits_string">Credits:</string>
+    <string name="itemname">ItemName</string>
+    <string name="price">Price</string>
 </resources>
