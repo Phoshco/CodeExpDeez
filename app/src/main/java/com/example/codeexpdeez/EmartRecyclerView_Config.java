@@ -29,6 +29,7 @@ public class EmartRecyclerView_Config {
     class EmartItemView extends RecyclerView.ViewHolder{
         private TextView mName;
         private TextView mPrice;
+        private TextView mId;
 
         private String key;
 
@@ -40,7 +41,6 @@ public class EmartRecyclerView_Config {
 
         public void bind(EmartClass emart, String key){
             mName.setText(emart.getName());
-//            String temp = "Quantity: "+emart.get();
             mPrice.setText(emart.getPrice());
             this.key = key;
         }

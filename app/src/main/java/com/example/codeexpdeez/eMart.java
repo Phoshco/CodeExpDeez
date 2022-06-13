@@ -19,9 +19,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 public class eMart extends Fragment {
 
     private View view;
@@ -41,8 +47,10 @@ public class eMart extends Fragment {
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.activity_emart, container, false);
         mSearchView = view.findViewById(R.id.search_bar);
-//        CharSequence query = mSearchView.getQuery(); // get the query string currently in the text field
         mSearchView.setQueryHint("Search View"); // set the hint text to display in the query text field
+        mRecyclerView = view.findViewById(R.id.search_results);
+
+
 
         // perform set on query text listener event
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -50,7 +58,9 @@ public class eMart extends Fragment {
             public boolean onQueryTextSubmit(String query) {
                 // do something on text submit
                 CharSequence value = mSearchView.getQuery(); // get the query string currently in the text field
-                Log.d("LALA", String.valueOf(value));
+//                Log.d("LALA", String.valueOf(value));
+                updateRecyclerView(String.valueOf(value));
+
                 return false;
             }
 
@@ -61,21 +71,26 @@ public class eMart extends Fragment {
             }
         });
 
-//        mDatabase = FirebaseDatabase.getInstance().getReference().child("Em");
-//        mRecyclerView = (RecyclerView) view.findViewById(R.id.search_results);
 
-//        EmartFirebase fb = new EmartFirebase();
-//        fb.readEmart(new EmartFirebase.DataStatus() {
-//            @Override
-//            public void DataInserted() {}
-//
-//            @Override
-//            public void DataIsLoadedEvent(List<EmartClass> emartThings, List<String> keys){
-//                new EmartRecyclerView_Config().setConfig(mRecyclerView, view.getContext(), emartThings , keys);
-//            }
-//
-//        });
 
         return view;
+    }
+
+    public void updateRecyclerView(String searchValue){
+        List<EmartClass> emartThings = new ArrayList<>();
+
+        mDatabase = FirebaseDatabase.getInstance("https://expcode-2022-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Em");
+
+        EmartFirebase fb = new EmartFirebase(searchValue);
+        fb.readEmart(new EmartFirebase.DataStatus() {
+            @Override
+            public void DataInserted() {}
+
+            @Override
+            public void DataIsLoadedEmart(List<EmartClass> emartThings, List<String> keys){
+                Log.i("RECYCLER", "IN");
+                new EmartRecyclerView_Config().setConfig(mRecyclerView, view.getContext(), emartThings , keys);
+            }
+        });
     }
 }

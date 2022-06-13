@@ -3,24 +3,23 @@ package com.example.codeexpdeez;
 import java.util.HashMap;
 
 public class EmartClass {
-    private Integer id;
-    private Integer name;
+    private String id;
+    private String name;
     private String price;
-    private String type;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -31,23 +30,4 @@ public class EmartClass {
     public void setPrice(String price) {
         this.price = price;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public HashMap getStock() {
-        return stock;
-    }
-
-    public void setStock(HashMap stock) {
-        this.stock = stock;
-    }
-
-    private HashMap stock;
-
 }

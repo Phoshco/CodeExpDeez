@@ -19,13 +19,15 @@ import java.util.List;
 public class EmartFirebase {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceCart;
-    private List<EmartClass> emartThings = new ArrayList<>();
+    private List<EmartClass> items = new ArrayList<>();
 
-    public EmartFirebase(){
+    public EmartFirebase(String itemType){
         try {
             String username = FirebaseAuth.getInstance().getUid();
             mDatabase = FirebaseDatabase.getInstance();
-            mReferenceCart = mDatabase.getReference().child("Emart");
+            mReferenceCart = mDatabase.getReference().child("Emart2").child("Shirt");
+            Log.i("CORRECTT" ,  "NICE");
+
         }
         catch (Exception e){
             Log.i("ERROR" ,  e.toString());
@@ -33,7 +35,7 @@ public class EmartFirebase {
     }
 
     public interface DataStatus{
-        void DataIsLoadedEvent(List<EmartClass> emartThings, List<String> keys);
+        void DataIsLoadedEmart(List<EmartClass> items, List<String> keys);
         void DataInserted();
     }
     public void readEmart(final DataStatus dataStatus){
@@ -41,15 +43,16 @@ public class EmartFirebase {
         mReferenceCart.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                emartThings.clear();
+                items.clear();
                 List<String> keys = new ArrayList<>();
 
                 for(DataSnapshot keyNode: snapshot.getChildren()){
                     keys.add(keyNode.getKey());
-                    EmartClass emartClass = keyNode.getValue(EmartClass.class);
-                    emartThings.add(emartClass);
+                    EmartClass emartThing = keyNode.getValue(EmartClass.class);
+                    items.add(emartThing);
                 }
-                dataStatus.DataIsLoadedEvent(emartThings,keys);
+                Log.i("DATABASE", String.valueOf(items));
+                dataStatus.DataIsLoadedEmart(items,keys);
             }
 
             @Override
@@ -59,23 +62,5 @@ public class EmartFirebase {
         });
     }
 
-//    public void updateEmart(EmartClass emartClass, final DataStatus dataStatus){
-////        String key = emartClass.getDate();
-////        mReferenceCart.child(key).setValue(event).addOnCompleteListener(new OnCompleteListener<Void>() {
-////            @Override
-////            public void onComplete(@NonNull Task<Void> task) {
-////                dataStatus.DataInserted();
-////            }
-////        });
-////    }
 
-//    public void deleteEmart(int i, final DataStatus dataStatus){
-//        String temp = events.get(i).getDate();
-//        mReferenceCart.child(temp).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                dataStatus.DataInserted();
-//            }
-//        });
-//    }
 }
