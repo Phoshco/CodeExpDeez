@@ -33,6 +33,7 @@ public class Schedule extends Fragment {
     Switch remove;
     public Context mContext;
     public EventAdapter mEventAdapter;
+    ScheduleFirebase fb;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -46,7 +47,7 @@ public class Schedule extends Fragment {
         privilege = Integer.parseInt(user.get("Privilege").toString());
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.schedule_recycler);
-        ScheduleFirebase fb = new ScheduleFirebase(user.get("Unit").toString(),user.get("Coy").toString());
+        fb = new ScheduleFirebase(user.get("Unit").toString(),user.get("Coy").toString());
         fb.readSchedule(new ScheduleFirebase.DataStatus() {
             @Override
             public void DataInserted() {}
@@ -81,6 +82,7 @@ public class Schedule extends Fragment {
                                 public void DataInserted() {
                                 }
                             });
+                            mEventAdapter.notifyDataSetChanged();
                         }
                     });
                 }

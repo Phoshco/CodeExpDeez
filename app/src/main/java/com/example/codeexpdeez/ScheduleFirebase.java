@@ -64,22 +64,6 @@ public class ScheduleFirebase {
 
     public void updateSchedule(ScheduleEvent event, final DataStatus dataStatus){
         String key = event.getDate();
-        /*String deets = event.getDetails();
-        String date = event.getDate();
-        mReferenceCart.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild(key)){
-                    String qtyy = (String) snapshot.child(key).child("quantity").getValue();
-                    int quantity = parseInt(qtyy);
-                    cart.setQuantity(String.valueOf(quantity+qty));
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
         mReferenceCart.child(key).setValue(event).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

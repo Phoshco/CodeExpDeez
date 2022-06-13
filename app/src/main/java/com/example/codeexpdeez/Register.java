@@ -105,8 +105,9 @@ public class Register extends AppCompatActivity {
             public void onClick(View v){
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
-                if (TextUtils.isEmpty(txt_email)||TextUtils.isEmpty(txt_password)){
-                    Toast.makeText(Register.this,"Please enter email/password",Toast.LENGTH_SHORT).show();
+                String txt_name = name.getText().toString();
+                if (TextUtils.isEmpty(txt_email)||TextUtils.isEmpty(txt_password)||TextUtils.isEmpty(txt_name)){
+                    Toast.makeText(Register.this,"Please enter email/password/name",Toast.LENGTH_SHORT).show();
                 } else if (txt_password.length()<6){
                     Toast.makeText(Register.this,"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
                 } else if (rankSel.equals("-- Choose Rank --")){
