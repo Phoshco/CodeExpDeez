@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewEmartItem">
+
+
+    <TextView
+        android:id="@+id/textViewSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnerSize"
+        android:layout_marginBottom="11dp"
+        android:layout_weight="1"
+        android:text="Size" />
+
+    <Spinner
+        android:id="@+id/spinnerSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textViewColour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerSize"
+        android:layout_marginTop="23dp"
+        android:layout_weight="1"
+        android:text="Colour" />
+
+    <Spinner
+        android:id="@+id/spinnerCOlour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewColour"
+        android:layout_marginTop="33dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textViewCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerCOlour"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="1"
+        android:text="Cost:" />
+
+    <TextView
+        android:id="@+id/textViewCostValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCost"
+        android:layout_marginTop="27dp"
+        android:layout_weight="1"
+        android:text=": " />
+
+    <TextView
+        android:id="@+id/textViewCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCostValue"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="30dp"
+        android:layout_weight="1"
+        android:text="Credits left:" />
+
+    <TextView
+        android:id="@+id/textViewCreditValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCredit"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="30dp"
+        android:layout_weight="1"
+        android:text="" />
+
+    <Button
+        android:id="@+id/dropdownSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCost"
+        android:layout_marginTop="326dp"
+        android:text="Add to Cart" />
+
+</RelativeLayout>
+
