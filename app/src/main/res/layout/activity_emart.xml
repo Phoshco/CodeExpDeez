@@ -33,6 +33,12 @@
             android:paddingStart="25dp"
             android:text="@string/credits_string"
             android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/showCartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Cart"/>
     </LinearLayout>
 
     <SearchView

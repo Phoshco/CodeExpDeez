@@ -6,8 +6,9 @@ import static java.lang.Integer.parseInt;
         import android.util.Log;
 
         import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-        import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnCompleteListener;
         import com.google.android.gms.tasks.Task;
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ public class CartFirebase {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceProducts;
     private DatabaseReference mReferenceCart;
+    private DatabaseReference mReferenceCheckout;
     //private List<Product> products = new ArrayList<>();
     private List<Cart> carts = new ArrayList<>();
 
@@ -39,6 +41,7 @@ public class CartFirebase {
 //            mReferenceProducts = mDatabase.getReference(username).child("User Inventory").child("Location");
 //            mReferenceProducts = mDatabase.getReference("Product");
             Log.i("USRENAME", username.toString());
+            mReferenceCheckout = mDatabase.getReference(username).child("Checkout");
             mReferenceCart = mDatabase.getReference(username).child("Cart");
         }
         catch (Exception e){
@@ -47,23 +50,25 @@ public class CartFirebase {
     }
 
     public interface DataStatus{
-        void DataIsLoadedCart(List<Cart> carts, List<String> keys);
+        void DataIsLoadedCart(List<Cart> carts, List<String> keys, Integer totalPrice);
         void DataInserted();
+//        void DataUpdated();
     }
     public void readCart(final DataStatus dataStatus){
-
         mReferenceCart.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 carts.clear();
                 List<String> keys = new ArrayList<>();
+                Integer totalPrice = 0;
 
                 for(DataSnapshot keyNode: snapshot.getChildren()){
                     keys.add(keyNode.getKey());
                     Cart cart = keyNode.getValue(Cart.class);
                     carts.add(cart);
+                    totalPrice = totalPrice + Integer.parseInt(cart.getPrice());
                 }
-                dataStatus.DataIsLoadedCart(carts,keys);
+                dataStatus.DataIsLoadedCart(carts,keys, totalPrice);
             }
 
             @Override
@@ -91,6 +96,36 @@ public class CartFirebase {
                         dataStatus.DataInserted();
                     }
                 });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+    }
+
+    public void checkoutCart(String collectionTime, final DataStatus dataStatus){
+
+        mReferenceCart.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                carts.clear();
+                List<String> keys = new ArrayList<>();
+
+                for(DataSnapshot keyNode: snapshot.getChildren()){
+                    keys.add(keyNode.getKey());
+                    Cart cart = keyNode.getValue(Cart.class);
+                    mReferenceCheckout.child(keyNode.getKey()).setValue(cart);
+                    mReferenceCheckout.child(keyNode.getKey()).child("collection_time").setValue(collectionTime).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            dataStatus.DataInserted();
+                        }
+                    });
+
+                    keyNode.getRef().removeValue();
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

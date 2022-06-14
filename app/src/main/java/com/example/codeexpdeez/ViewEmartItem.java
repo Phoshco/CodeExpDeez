@@ -2,6 +2,7 @@ package com.example.codeexpdeez;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -93,12 +94,12 @@ public class ViewEmartItem extends AppCompatActivity {
                 new CartFirebase().updateCart(cart, new CartFirebase.DataStatus(){
 
                     @Override
-                    public void DataIsLoadedCart(List<Cart> carts, List<String> keys) {}
+                    public void DataIsLoadedCart(List<Cart> carts, List<String> keys, Integer p) {}
 
                     @Override
                     public void DataInserted() {
-                        Toast.makeText(view.getContext(), "The item has been added successfully into cart", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(view.getContext(), eMart.class);
+//                        Toast.makeText(view.getContext(), "The item has been added successfully into cart", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent((Activity) getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
                 });

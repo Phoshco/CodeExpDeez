@@ -1,13 +1,16 @@
 package com.example.codeexpdeez;
 
 //import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -33,6 +36,7 @@ public class eMart extends Fragment {
     private static final String TAG = "Firebase";
     private SearchView mSearchView;
     private EditText editText;
+    private Button showCartBtn;
     private DatabaseReference mDatabase;
 
     @Override
@@ -44,6 +48,15 @@ public class eMart extends Fragment {
         mSearchView.setQueryHint("Search View"); // set the hint text to display in the query text field
         mRecyclerView = view.findViewById(R.id.search_results);
 
+        showCartBtn = view.findViewById(R.id.showCartBtn);
+
+        showCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), CheckoutCart.class);
+                startActivity(intent);
+            }
+        });
 
 
         // perform set on query text listener event
@@ -68,9 +81,6 @@ public class eMart extends Fragment {
     }
 
     public void updateRecyclerView(String searchValue){
-        List<EmartClass> emartThings = new ArrayList<>();
-
-        mDatabase = FirebaseDatabase.getInstance("https://expcode-2022-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Em");
 
         EmartFirebase fb = new EmartFirebase(searchValue);
         fb.readEmart(new EmartFirebase.DataStatus() {
