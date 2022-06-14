@@ -61,7 +61,7 @@ public class ViewEmartItem extends AppCompatActivity {
         ArrayAdapter<String> cadapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, citems);
         colourDropdown.setAdapter(cadapter);
 
-        String[] sitems = new String[]{"Red", "Black", "Blue"};
+        String[] sitems = new String[]{"S", "M", "L"};
         ArrayAdapter<String> sadapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, sitems);
         sizeDropdown.setAdapter(sadapter);
 
