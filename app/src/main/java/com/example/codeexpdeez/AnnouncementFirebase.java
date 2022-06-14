@@ -1,8 +1,10 @@
 package com.example.codeexpdeez;
 
+import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,8 +57,9 @@ public class AnnouncementFirebase {
             }
         });
     }
-    public void updateAnnouncement(AnnouncementObject announcement, final DataStatus dataStatus){
-        String key= announcement.getDate();
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void updateAnnouncement(AnnouncementObject announcement, final DataStatus dataStatus) {
+        String key = announcement.getDate() + announcement.getTime().replace(".", "");
         mReferenceCart.child(key).setValue(announcement).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -64,8 +67,9 @@ public class AnnouncementFirebase {
             }
         });
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void deleteSchedule(int i, final DataStatus dataStatus){
-        String temp = announcements.get(i).getDate();
+        String temp = announcements.get(i).getDate() + announcements.get(i).getTime().replace(".", "");
         mReferenceCart.child(temp).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

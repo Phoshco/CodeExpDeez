@@ -65,8 +65,9 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         }
 
         public void bind(AnnouncementObject announcement, String key){
+            String tem= announcement.getDate() + "\n" + announcement.getTime();
             mTitle.setText(announcement.getTitle());
-            mDate.setText(announcement.getDate());
+            mDate.setText(tem);
             mMessage.setText(announcement.getMessage());
             this.key = key;
         }
