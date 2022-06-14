@@ -37,6 +37,7 @@ public class eMart extends Fragment {
     private SearchView mSearchView;
     private EditText editText;
     private Button showCartBtn;
+    private Button showCheckoutBtn;
     private DatabaseReference mDatabase;
 
     @Override
@@ -49,6 +50,8 @@ public class eMart extends Fragment {
         mRecyclerView = view.findViewById(R.id.search_results);
 
         showCartBtn = view.findViewById(R.id.showCartBtn);
+        showCheckoutBtn = view.findViewById(R.id.showCheckoutBtn);
+
 
         showCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +61,13 @@ public class eMart extends Fragment {
             }
         });
 
+        showCheckoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), CheckoutHistoryPage.class);
+                startActivity(intent);
+            }
+        });
 
         // perform set on query text listener event
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

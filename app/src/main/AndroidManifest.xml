@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeExpDeez">
         <activity
+            android:name=".CheckoutHistoryPage"
+            android:exported="false" />
+        <activity
             android:name=".CheckoutCart"
             android:exported="false" />
         <activity

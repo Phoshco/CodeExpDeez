@@ -3,22 +3,22 @@ package com.example.codeexpdeez;
 
 import static java.lang.Integer.parseInt;
 
-        import android.util.Log;
+import android.util.Log;
 
-        import androidx.annotation.NonNull;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-        import com.google.android.gms.tasks.Task;
-        import com.google.firebase.auth.FirebaseAuth;
-        import com.google.firebase.database.DataSnapshot;
-        import com.google.firebase.database.DatabaseError;
-        import com.google.firebase.database.DatabaseReference;
-        import com.google.firebase.database.FirebaseDatabase;
-        import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 The class FirebaseHelper
@@ -38,9 +38,6 @@ public class CartFirebase {
         try {
             String username = FirebaseAuth.getInstance().getUid();
             mDatabase = FirebaseDatabase.getInstance();
-//            mReferenceProducts = mDatabase.getReference(username).child("User Inventory").child("Location");
-//            mReferenceProducts = mDatabase.getReference("Product");
-            Log.i("USRENAME", username.toString());
             mReferenceCheckout = mDatabase.getReference(username).child("Checkout");
             mReferenceCart = mDatabase.getReference(username).child("Cart");
         }

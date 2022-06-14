@@ -20,13 +20,16 @@
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2625" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/menu/menu.xml" value="0.2625" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/drawable/box_display.xml" value="0.255" />
+        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.1275" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_checkout_cart.xml" value="0.1" />
-        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_emart.xml" value="0.4" />
+        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_checkout_history_page.xml" value="0.1743659420289855" />
+        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_emart.xml" value="0.2936893203883495" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_schedule.xml" value="0.223731884057971" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/activity_view_emart_item.xml" value="0.2" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/cart_list_item.xml" value="0.17074275362318841" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/event_items.xml" value="0.17074275362318841" />
+        <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/history_list_item.xml" value="0.37681159420289856" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/search_result_box.xml" value="0.25052083333333336" />
         <entry key="..\:/yuli2/CodeExpDeez2/app/src/main/res/layout/view_cart.xml" value="0.17074275362318841" />
       </map>
