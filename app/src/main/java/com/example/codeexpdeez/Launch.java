@@ -54,14 +54,16 @@ public class Launch extends AppCompatActivity {
                     String privilege = snapshot.child("info").child("privilege").getValue()+"";
                     String unit = snapshot.child("info").child("unit").getValue()+"";
                     String coy = snapshot.child("info").child("coy").getValue()+"";
-                    session.createLoginSession(uid, name, rank, privilege, unit, coy);
+                    String credit = snapshot.child("info").child("credit").getValue()+"";
+
+                    session.createLoginSession(uid, name, rank, privilege, unit, coy, credit);
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                 }
             });
 
-            Intent i = new Intent(Launch.this,MainActivity.class);
+            Intent i = new Intent(Launch.this,Login.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }

@@ -34,6 +34,8 @@ public class SessionManager {
     public static final String KEY_NAME = "Name";
 
     public static final String KEY_RANK = "Rank";
+    public static final String KEY_CREDIT = "Credit";
+
 
     // Constructor
     public SessionManager(Context context) {
@@ -46,7 +48,7 @@ public class SessionManager {
      * Call this method on/after login to store the details in session
      * */
 
-    public void createLoginSession(String UID, String Name, String Rank, String privilege, String unit, String coy) {
+    public void createLoginSession(String UID, String Name, String Rank, String privilege, String unit, String coy, String Credit) {
 
         editor.putString(KEY_UID, UID);
 
@@ -59,6 +61,7 @@ public class SessionManager {
         editor.putString(KEY_NAME, Name);
 
         editor.putString(KEY_RANK, Rank);
+        editor.putString(KEY_CREDIT , Credit);
 
         // commit changes
         editor.commit();
@@ -76,6 +79,7 @@ public class SessionManager {
         user.put("Privilege",sharedPrefer.getString(KEY_PRIVILEGE, null));
         user.put("Unit", sharedPrefer.getString(KEY_UNIT, null));
         user.put("Coy", sharedPrefer.getString(KEY_COY, null));
+        user.put("Credit", sharedPrefer.getString(KEY_CREDIT, null));
 
         return user;
     }

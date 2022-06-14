@@ -135,6 +135,7 @@ public class Register extends AppCompatActivity {
                     user.setRank(rankSel);
                     user.setUnit(unitSel);
                     user.setCoy(coySel);
+                    user.setCredit("100");
                     /*startActivity(new Intent(Register.this, MainActivity.class));
                     finish();*/
                     loginUser(email, password, user);
@@ -176,7 +177,9 @@ public class Register extends AppCompatActivity {
                 String privilege = snapshot.child("info").child("privilege").getValue()+"";
                 String unit = snapshot.child("info").child("unit").getValue()+"";
                 String coy = snapshot.child("info").child("coy").getValue()+"";
-                session.createLoginSession(username, name, rank, privilege, unit, coy);
+                String credit = snapshot.child("info").child("credit").getValue()+"";
+
+                session.createLoginSession(username, name, rank, privilege, unit, coy, credit);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

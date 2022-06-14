@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/teal_200"
+    android:layout_marginVertical="4sp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/itemname"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:text="@string/itemname"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/price_value"
+        />
+
+
+    <TextView
+        android:id="@+id/price_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:scrollHorizontally="true"
+        android:text="@string/price"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemname" />
+
+    <TextView
+        android:id="@+id/textViewSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:scrollHorizontally="true"
+        android:text="Size: "
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/itemname"
+        app:layout_constraintTop_toTopOf="@id/itemname"
+
+        />
+
+    <TextView
+        android:id="@+id/size_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="true"
+        android:text="test"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/textViewSize"
+        app:layout_constraintTop_toTopOf="@id/itemname"
+        />
+
+    <TextView
+        android:id="@+id/textViewColour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:scrollHorizontally="true"
+        android:text="Colour: "
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewSize"
+        app:layout_constraintLeft_toLeftOf="@id/textViewSize"
+        />
+
+    <TextView
+        android:id="@+id/colour_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="true"
+        android:text="test"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/size_value"
+        app:layout_constraintLeft_toRightOf="@id/textViewColour"
+        />
+
+
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:scrollHorizontally="true"
+        android:text="Quantity: "
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewColour"
+        app:layout_constraintLeft_toLeftOf="@id/textViewColour"
+        />
+
+    <TextView
+        android:id="@+id/quantity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="true"
+        android:text="test"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/colour_value"
+        app:layout_constraintLeft_toRightOf="@id/textViewQuantity"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
