@@ -1,7 +1,9 @@
 package com.example.codeexpdeez;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -30,6 +32,7 @@ public class EmartRecyclerView_Config {
         private TextView mName;
         private TextView mPrice;
         private TextView mId;
+        private String id;
 
         private String key;
 
@@ -37,13 +40,30 @@ public class EmartRecyclerView_Config {
             super(LayoutInflater.from(mContext).inflate(R.layout.search_result_box, parent, false));
             mName = (TextView) itemView.findViewById(R.id.itemname);
             mPrice = (TextView) itemView.findViewById(R.id.price);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(mContext, ViewEmartItem.class);
+                    intent.putExtra("key", key);
+                    intent.putExtra("id", id);
+                    intent.putExtra("name", mName.getText().toString());
+                    intent.putExtra("price", mPrice.getText().toString());
+
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bind(EmartClass emart, String key){
             mName.setText(emart.getName());
             mPrice.setText(emart.getPrice());
+            id = emart.getId();
             this.key = key;
         }
+
+
+
     }
 
     // the adaptor for the cart list item

@@ -70,7 +70,8 @@ public class Login extends AppCompatActivity {
                             String privilege = snapshot.child("info").child("privilege").getValue()+"";
                             String unit = snapshot.child("info").child("unit").getValue()+"";
                             String coy = snapshot.child("info").child("coy").getValue()+"";
-                            session.createLoginSession(uid, name, rank, privilege, unit, coy);
+                            String credit = snapshot.child("info").child("credit").getValue()+"";
+                            session.createLoginSession(uid, name, rank, privilege, unit, coy, credit);
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {

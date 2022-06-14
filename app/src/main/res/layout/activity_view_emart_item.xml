@@ -1,93 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".ViewEmartItem">
 
 
     <TextView
-        android:id="@+id/textViewSize"
+        android:id="@+id/itemnametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/spinnerSize"
-        android:layout_marginBottom="11dp"
         android:layout_weight="1"
-        android:text="Size" />
+        android:layout_marginTop="20dp"
+        android:text="Item Name:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/emptytextview"/>
+
+    <TextView
+        android:id="@+id/emptytextview"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="20dp"
+        android:scrollHorizontally="true"
+        android:text="testtttt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/itemnametext"
+        />
+
+    <TextView
+        android:id="@+id/textViewSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:text="Size"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emptytextview"
+        app:layout_constraintBottom_toTopOf="@id/spinnerSize"/>
 
     <Spinner
         android:id="@+id/spinnerSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toBottomOf="@id/textViewSize"
+        />
 
     <TextView
         android:id="@+id/textViewColour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerSize"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:text="Colour" />
+        android:padding="5dp"
+        android:text="Colour"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/spinnerSize"/>
 
     <Spinner
         android:id="@+id/spinnerCOlour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewColour"
-        android:layout_marginTop="33dp"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        android:text="Select Colour"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textViewColour"/>
+
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="Quantity"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCOlour"/>
+
+    <Spinner
+        android:id="@+id/spinnerQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewColour"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:text="Select Colour"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuantity"/>
+
+
 
     <TextView
         android:id="@+id/textViewCost"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerCOlour"
-        android:layout_marginTop="82dp"
-        android:layout_marginBottom="0dp"
+        android:layout_below="@+id/spinnerQuantity"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:text="Cost:" />
+        android:text="Cost:"
+        app:layout_constraintRight_toLeftOf="@id/textViewCostValue"
+        app:layout_constraintTop_toBottomOf="@id/spinnerQuantity"/>
 
     <TextView
         android:id="@+id/textViewCostValue"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewCost"
-        android:layout_marginTop="27dp"
         android:layout_weight="1"
-        android:text=": " />
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        android:text=" sdfsdfsdfsdf"
+        app:layout_constraintTop_toBottomOf="@id/spinnerQuantity"
+        app:layout_constraintLeft_toRightOf="@id/textViewCost"/>
 
     <TextView
         android:id="@+id/textViewCredit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewCostValue"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="30dp"
         android:layout_weight="1"
-        android:text="Credits left:" />
+        android:text="Credits left:"
+        app:layout_constraintRight_toLeftOf="@id/textViewCreditValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewCost"/>
 
     <TextView
         android:id="@+id/textViewCreditValue"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewCredit"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="8dp"
         android:layout_weight="1"
-        android:text="" />
+        android:text="testtttttttttttttttttttt"
+        app:layout_constraintTop_toBottomOf="@id/textViewCost"
+        app:layout_constraintLeft_toRightOf="@id/textViewCredit"/>
 
     <Button
         android:id="@+id/dropdownSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="15dp"
         android:layout_below="@+id/textViewCost"
-        android:layout_marginTop="326dp"
-        android:text="Add to Cart" />
+        android:text="Add to Cart"
+        android:background="@color/teal_200"
+        app:layout_constraintTop_toBottomOf="@id/textViewCreditValue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
 
-</RelativeLayout>
+        />
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>

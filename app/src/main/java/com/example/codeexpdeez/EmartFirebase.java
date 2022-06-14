@@ -1,5 +1,7 @@
 package com.example.codeexpdeez;
 
+import static java.lang.Integer.parseInt;
+
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -19,26 +21,30 @@ import java.util.List;
 public class EmartFirebase {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceCart;
+//    private DatabaseReference mReferenceAcc;
+    private String credit;
     private List<EmartClass> items = new ArrayList<>();
 
-    public EmartFirebase(String itemType){
+    public EmartFirebase(String itemType) {
         try {
             String username = FirebaseAuth.getInstance().getUid();
             mDatabase = FirebaseDatabase.getInstance();
+//            credit = mDatabase.getReference(username).child("info")
             mReferenceCart = mDatabase.getReference().child("Emart2").child("Shirt");
-            Log.i("CORRECTT" ,  "NICE");
+            Log.i("CORRECTT", "NICE");
 
-        }
-        catch (Exception e){
-            Log.i("ERROR" ,  e.toString());
+        } catch (Exception e) {
+            Log.i("ERROR", e.toString());
         }
     }
 
-    public interface DataStatus{
+    public interface DataStatus {
         void DataIsLoadedEmart(List<EmartClass> items, List<String> keys);
+
         void DataInserted();
     }
-    public void readEmart(final DataStatus dataStatus){
+
+    public void readEmart(final DataStatus dataStatus) {
 
         mReferenceCart.addValueEventListener(new ValueEventListener() {
             @Override
@@ -46,13 +52,13 @@ public class EmartFirebase {
                 items.clear();
                 List<String> keys = new ArrayList<>();
 
-                for(DataSnapshot keyNode: snapshot.getChildren()){
+                for (DataSnapshot keyNode : snapshot.getChildren()) {
                     keys.add(keyNode.getKey());
                     EmartClass emartThing = keyNode.getValue(EmartClass.class);
                     items.add(emartThing);
                 }
                 Log.i("DATABASE", String.valueOf(items));
-                dataStatus.DataIsLoadedEmart(items,keys);
+                dataStatus.DataIsLoadedEmart(items, keys);
             }
 
             @Override
@@ -61,6 +67,4 @@ public class EmartFirebase {
             }
         });
     }
-
-
 }

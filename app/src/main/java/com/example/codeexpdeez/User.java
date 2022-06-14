@@ -19,6 +19,7 @@ public class User {
     private String rank;
     private String unit;
     private String coy;
+    private String credit;
     private int privilege;
     private ArrayList<String> Officers = new ArrayList<>(Arrays.asList("GEN", "LG","MG", "BG", "COL", "SLTC", "LTC", "MAJ", "CPT", "LTA", "2LT"));
     private ArrayList<String> WOSpec = new ArrayList<>(Arrays.asList("CWO", "SWO", "MWO", "1WO", "2WO", "3WO", "MSG", "SSG", "1SG", "2SG", "3SG"));
@@ -30,6 +31,8 @@ public class User {
     public void setRank(String rank){this.rank = rank;setPrivilege();}
     public void setUnit(String unit){this.unit = unit;}
     public void setCoy(String coy){this.coy = coy;}
+    public void setCredit(String credit){this.credit = credit;}
+
     public void setPrivilege(){
         if (Officers.contains(rank)){
             this.privilege = 2;
@@ -46,4 +49,7 @@ public class User {
     public String getCoy(){return coy;}
     public int getPrivilege(){return privilege;}
 
+    public String getCredit() {
+        return credit;
+    }
 }
