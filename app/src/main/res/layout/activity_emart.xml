@@ -11,41 +11,42 @@
     android:paddingBottom="10dp"
     tools:context=".eMart">
 
-    <LinearLayout
-        android:id="@+id/credits"
+
+    <TextView
+        android:id="@+id/credits_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/search_results"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/box_display"
+        android:padding="10dp"
+        android:paddingStart="25dp"
+        android:text="@string/credits_string"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"/>
+
+    <Button
+        android:id="@+id/showCartBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Cart"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintTop_toBottomOf="@id/credits_box"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        android:orientation="vertical" >
+        app:layout_constraintRight_toLeftOf="@id/showCheckoutBtn"
 
-        <TextView
-            android:id="@+id/credits_box"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/box_display"
-            android:padding="10dp"
-            android:paddingStart="25dp"
-            android:text="@string/credits_string"
-            android:textColor="@color/black" />
+        />
 
-        <Button
-            android:id="@+id/showCartBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Show Cart"/>
+    <Button
+        android:id="@+id/showCheckoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Checkout History"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/credits_box"
+        />
 
-        <Button
-            android:id="@+id/showCheckoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Show Checkout History"/>
-    </LinearLayout>
 
     <SearchView
         android:id="@+id/search_bar"
@@ -55,7 +56,8 @@
         android:queryHint="@string/query_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results"
@@ -65,12 +67,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/credits"
+        app:layout_constraintTop_toBottomOf="@+id/showCartBtn"
         app:layout_constraintVertical_bias="0.0" />
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,26 @@
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/addmenu.xml" value="0.17604166666666668" />
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17604166666666668" />
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/menu.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.195" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_announcement.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_schedule_event.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_announcement.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_change_pass.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_checkout_cart.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_checkout_history_page.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_emart.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_launch.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_login.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_main.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_profile.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_register.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_schedule.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_view_emart_item.xml" value="0.31333333333333335" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/announcement_item.xml" value="0.31333333333333335" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/cart_list_item.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/event_items.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/history_list_item.xml" value="0.32447916666666665" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/search_result_box.xml" value="0.31851851851851853" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/person.xml" value="0.193" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_schedule_event.xml" value="0.25" />
         <entry key="..\:/Users/vinch/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_announcement.xml" value="0.2625" />

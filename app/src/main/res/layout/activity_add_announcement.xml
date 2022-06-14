@@ -15,7 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#b6d7a8"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -42,7 +41,7 @@
             android:hint="Enter message here"
             android:textColor="@color/black"
             android:textSize="15sp"
-            android:paddingTop="150dp"/>
+            android:paddingTop="25dp"/>
 
 
         <Button
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/addAnnouncement"
             android:text="Add announcement"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
 
