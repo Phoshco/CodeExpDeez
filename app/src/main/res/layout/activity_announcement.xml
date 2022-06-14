@@ -11,11 +11,20 @@
     android:paddingBottom="10dp"
     tools:context=".Announcement">
 
-    <TextView
+    <Switch
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="DEEZ ANNOUNCEMENTS"
-        android:textSize="50sp"
-        android:gravity="center"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/remove"
+        android:text="Delete announcements (Tap on title)"
+        android:paddingBottom="5dp"
+        android:gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/announcement_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 
 </LinearLayout>
