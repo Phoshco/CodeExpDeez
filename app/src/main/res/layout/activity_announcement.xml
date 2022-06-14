@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/remove"
         android:text="Delete announcements (Tap on title)"
+        android:textColor="#376788"
         android:padding="5dp"
         android:gravity="center" />
 

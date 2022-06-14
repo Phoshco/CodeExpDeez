@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!--  ignore name with colour name  -->
+
+    <color name="purple_200">#376788</color>
+
+    <!-- MAIN THEME: nav bar, action bar, etc -->
+    <color name="purple_500">#376788</color>
+
+    <color name="purple_700">#376788</color>
+
+    <!-- progress bar + colours when typing   -->
+    <color name="teal_200">#376788</color>
+
+    <color name="teal_700">#376788</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- background -->
+    <color name="white">#D9D9D9</color>
+
+    <!-- add to cart, checkout, add events etc -->
+    <color name="buttons">#81BABD</color>
+
+    <!-- boxes-->
+    <color name="box">#FFFFFF</color>
+
+
 </resources>

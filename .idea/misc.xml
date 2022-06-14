@@ -22,7 +22,10 @@
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/addmenu.xml" value="0.17604166666666668" />
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17604166666666668" />
         <entry key="..\:/Documents/SUTD Stuff/CodeExpDeez/app/src/main/res/menu/menu.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/box.xml" value="0.172" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/box_display.xml" value="0.172" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.195" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/drawable/myrect.xml" value="0.172" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_announcement.xml" value="0.31851851851851853" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_add_schedule_event.xml" value="0.31851851851851853" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_announcement.xml" value="0.31851851851851853" />
@@ -38,6 +41,7 @@
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_schedule.xml" value="0.32447916666666665" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/activity_view_emart_item.xml" value="0.31333333333333335" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/announcement_item.xml" value="0.31333333333333335" />
+        <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/box.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/cart_list_item.xml" value="0.32447916666666665" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/event_items.xml" value="0.31851851851851853" />
         <entry key="..\:/Users/tanli/AndroidStudioProjects/CodeExpDeez/app/src/main/res/layout/history_list_item.xml" value="0.32447916666666665" />

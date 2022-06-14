@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@drawable/box"
+    android:elevation="10dp"
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:layout_marginVertical="4sp"
+    >
 
     <TextView
         android:layout_width="fill_parent"
@@ -15,7 +21,6 @@
         android:paddingLeft="8dp"
         android:textColor="@color/black"
         android:textSize="23sp"
-        android:outlineSpotShadowColor="#4CFF00"
         />
     <TextView
         android:layout_width="fill_parent"
@@ -24,7 +29,6 @@
         android:text="Date"
         android:id="@+id/announcement_date"
         android:textSize="10sp"
-        android:outlineSpotShadowColor="#4CFF00"
         />
     <TextView
         android:layout_width="fill_parent"
@@ -35,7 +39,6 @@
         android:paddingBottom="1dp"
         android:textSize="15sp"
         android:textColor="@color/black"
-        android:outlineSpotShadowColor="#4CFF00"
         />
 
 </LinearLayout>

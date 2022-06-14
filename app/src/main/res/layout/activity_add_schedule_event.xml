@@ -31,6 +31,9 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/space"
+        android:elevation="10dp"
+        android:background="@drawable/box"
+        android:padding="10dp"
         />
 
     <EditText
@@ -53,7 +56,7 @@
         android:layout_marginTop="20dp"
         android:text="Date of event"
         android:textColor="@color/black"
-        android:layout_marginLeft="11dp"
+        android:layout_marginLeft="9dp"
         app:layout_constraintTop_toBottomOf="@id/details"
         app:layout_constraintBottom_toTopOf="@id/date"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +70,9 @@
         android:layout_marginLeft="10dp"
         app:layout_constraintTop_toBottomOf="@id/showdate"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/buttons"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         />
 
     <TextView
@@ -94,7 +100,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/addEvent"
         app:layout_constraintLeft_toRightOf="@id/date"
-        app:layout_constraintTop_toBottomOf="@id/showtime" />
+        app:layout_constraintTop_toBottomOf="@id/showtime"
+        android:background="@drawable/buttons"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+
+        />
 
 
     <Button
@@ -103,7 +114,12 @@
         android:id="@+id/addEvent"
         android:text="Add event to company schedule"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/date"/>
+        app:layout_constraintTop_toBottomOf="@id/date"
+        android:background="@drawable/buttons"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@drawable/box"
+    android:elevation="10dp"
+    android:layout_marginVertical="4sp"
+    >
 
     <TextView
         android:layout_width="fill_parent"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Register"
     android:layout_gravity="center"
-    android:padding="15dp">
+    android:padding="20dp">
 
     <!--<ImageView
         android:id="@+id/title1"
@@ -24,10 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/box"
         android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:elevation="10dp"
         android:hint="Enter name"
         android:imeOptions="actionNext"
-        android:singleLine="true" />
+        android:padding="10dp"
+        android:singleLine="true"
+
+        />
 
     <Spinner
         android:id="@+id/rank"
@@ -62,10 +67,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/coy"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:hint="Enter email"
         android:imeOptions="actionNext"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:background="@drawable/box"
+        android:padding="10dp"
+        android:elevation="10dp"
+        />
 
     <EditText
         android:id="@+id/password"
@@ -76,15 +85,24 @@
         android:hint="Enter password"
         android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_baseline_lock_open_24"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:background="@drawable/box"
+        android:padding="10dp"
+        android:elevation="10dp"
+        />
 
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
-        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:text="Register" />
+        android:layout_marginTop="10dp"
+        android:text="Register"
+        android:background="@drawable/buttons"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+        />
 
 </RelativeLayout>
