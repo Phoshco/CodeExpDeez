@@ -37,6 +37,9 @@
             android:name=".Announcement"
             android:exported="false" />
         <activity
+            android:name=".AddAnnouncementObject"
+            android:exported="false" />
+        <activity
             android:name=".Launch"
             android:exported="true">
             <intent-filter>
