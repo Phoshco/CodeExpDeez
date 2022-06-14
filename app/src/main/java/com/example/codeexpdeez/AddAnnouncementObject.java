@@ -50,9 +50,9 @@ public class AddAnnouncementObject extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
-                String description = "Announcement by: "+user.get("Rank").toString()+" "+user.get("Name").toString();
                 String date = LocalDate.now().toString();
                 String time = LocalTime.now().toString();
+                LocalDateTime dateTime= LocalDateTime.now();
                 AnnouncementObject announcement = new AnnouncementObject();
                 announcement.setTitle(title.getText().toString());
                 announcement.setDate(date);
