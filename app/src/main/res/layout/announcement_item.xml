@@ -32,6 +32,7 @@
         android:text="Details"
         android:id="@+id/announcement_message"
         android:paddingLeft="10dp"
+        android:paddingBottom="1dp"
         android:textSize="15sp"
         android:textColor="@color/black"
         android:outlineSpotShadowColor="#4CFF00"

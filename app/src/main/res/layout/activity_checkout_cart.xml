@@ -16,7 +16,7 @@
         android:id="@+id/title_cart_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:layout_weight="1"
         android:background="@drawable/box_display"
         android:padding="10dp"
@@ -61,7 +61,7 @@
     <Spinner
         android:id="@+id/spinnerPickUp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         android:layout_marginBottom="10dp"
