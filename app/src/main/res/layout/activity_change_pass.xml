@@ -19,39 +19,41 @@
         android:layout_centerVertical="true"
         android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/oldpassword1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Old Password"
-            app:endIconMode="password_toggle">
+            app:endIconMode="password_toggle">-->
 
-            <com.google.android.material.textfield.TextInputEditText
+        <EditText
                 android:id="@+id/oldpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="10dp" />
+                android:drawablePadding="10dp"
+                android:hint="Old Password"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        <!--</com.google.android.material.textfield.TextInputLayout>-->
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/newpassword1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="New Password"
-            app:endIconMode="password_toggle">
+            app:endIconMode="password_toggle">-->
 
-            <com.google.android.material.textfield.TextInputEditText
+        <EditText
                 android:id="@+id/newpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="10dp" />
+                android:drawablePadding="10dp"
+                android:hint="New Password"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        <!--</com.google.android.material.textfield.TextInputLayout>-->
 
         <Button
             android:id="@+id/changePassword"

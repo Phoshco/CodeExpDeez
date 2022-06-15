@@ -23,8 +23,8 @@ password if the old password is correct.
 
 public class ChangePass extends AppCompatActivity {
 
-    private TextInputEditText oldpassword;
-    private TextInputEditText newpassword;
+    private EditText oldpassword;
+    private EditText newpassword;
     private Button changePassword;
 
     protected void onCreate(Bundle savedInstanceState){
@@ -35,8 +35,8 @@ public class ChangePass extends AppCompatActivity {
 
         String usernameToAssign = String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
-        oldpassword= (TextInputEditText) findViewById(R.id.oldpassword);
-        newpassword= (TextInputEditText) findViewById(R.id.newpassword);
+        oldpassword= (EditText) findViewById(R.id.oldpassword);
+        newpassword= (EditText) findViewById(R.id.newpassword);
         changePassword= (Button) findViewById(R.id.changePassword);
 
         changePassword.setOnClickListener(new View.OnClickListener() {
