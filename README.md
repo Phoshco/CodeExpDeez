@@ -6,7 +6,7 @@ Yuliati </br>
 Oakar Min </br>
 Lihui Tan </br>
 
-### Context and Problem Statement
+### Context and curent problems
 Inconvenience of checking of training schedule and routine orders: Usually only posted on physical paper at the respective Company office </br>
 
 Orders given by commanders may not be clear: Commands given verbally may not be coherent, and easily forgotten </br>
@@ -16,6 +16,9 @@ Differing commands from different commanders: Confusion 101 </br>
 Engagement with people in other Companies within the Unit is low: Improved communication within Companies can help with better scheduling </br>
 
 Lack of stock at eMart and long queues during breaks: A better system to inform servicemen before physically going down is needed </br>
+
+### Problem Statement
+How might we enable commanders & servicemen to have stronger and clear communications, in order to create a more efficient and coherent working environment?
 
 
 ### Proposed solution
