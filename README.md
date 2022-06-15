@@ -6,7 +6,7 @@ Yuliati </br>
 Oakar Min </br>
 Lihui Tan </br>
 
-##Context and Problem Statement
+###Context and Problem Statement
 Inconvenience of checking of training schedule and routine orders: Usually only posted on physical paper at the respective Company office
 
 Orders given by commanders may not be clear: Commands given verbally may not be coherent, and easily forgotten
@@ -17,10 +17,10 @@ Engagement with people in other Companies within the Unit is low: Improved commu
 
 Lack of stock at eMart and long queues during breaks: A better system to inform servicemen before physically going down is needed
 
-#Proposed solution
+###Proposed solution
 An announcement App which the higher authorities can use to relay information to their subordinates, while also making purchase of items easier for all.
 
-#Features
+###Features
 Military personnel with higher rank can make announcements to their subordinates
 
 Senior commanders will be able to see commands given by junior commanders to troopers
