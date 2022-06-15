@@ -4,37 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@drawable/box"
+    android:elevation="10dp"
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:layout_marginVertical="4sp"
+    >
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Title"
         android:id="@+id/announcement_title"
-        android:padding="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:outlineSpotShadowColor="#4CFF00"
+        android:paddingTop="1dp"
+        android:paddingLeft="8dp"
+        android:textColor="@color/black"
+        android:textSize="23sp"
         />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:text="Date"
         android:id="@+id/announcement_date"
-        android:padding="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:outlineSpotShadowColor="#4CFF00"
+        android:textSize="10sp"
         />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Details"
         android:id="@+id/announcement_message"
-        android:padding="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:outlineSpotShadowColor="#4CFF00"
+        android:paddingLeft="10dp"
+        android:paddingBottom="1dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         />
 
 </LinearLayout>
